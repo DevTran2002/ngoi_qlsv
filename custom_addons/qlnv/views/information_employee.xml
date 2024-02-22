@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="employee_view_tree" model="ir.ui.view">
+        <field name="name">Information.Employee.view.tree</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <!-- <field name="employee_id" /> -->
+                <field name="name" />
+                <field name="email" />
+                <field name="phone" />
+                <field name="login" />
+                <field name="department_id" />
+                <field name="parent_id"/>
+                <field name="gender" />
+            </tree>
+        </field>
+    </record>
+
+    
+    <record id="employee_view_search" model="ir.ui.view">
+        <field name="name">employee.view.search</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <!-- <field name="employee_id" /> -->
+                <field name="date_of_birth" options="{'format': 'DD/MM/YYYY'}"/>
+                <field name="gender" />
+                <field name="phone" />
+                <field name="address" />
+                <field name="image_employee"/>
+            </search>
+        </field>
+    </record>
+    
+    <record id="employee_view_form" model="ir.ui.view">
+        <field name="name">Information.Employee.view.form</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <group style = "width: 70%">
+                            <!-- <field name="employee_id" invisible = "1"/> -->
+                            <field name="name" />
+                            <field name="login" />
+                            <field name="phone" />
+                            <field name="email" />
+                            <field name="job_id" />
+                            <field name="parent_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="department_id" options="{'no_create': True, 'no_open': True}" widget="one2many_list"/>
+                        </group>
+                        <group class = "image_employee" style = "width: 30%; display: flex; justify-content: center;">
+                            <field name="image_employee" nolabel = "1" widget="image"  options="{'size': [300, 300]}"/>
+                        </group>
+                    </group>
+
+                    
+                <div class="mt-5">
+                    <notebook>
+                        <page name="private_information" string="Private information">
+                            <group>
+                                <group string="PERSONAL CONTACT">
+                                    <field name="country" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="address" />
+                                    <field name="private_email" />
+                                    <field name="date_of_birth" options="{'format': 'DD/MM/YYYY'}"/>
+                                    <field name="gender" />
+                                    <field name="identification_id" />
+                                    <field name="passport_id" />
+                                    <field name="place_of_birth" />
+                                </group>
+                                <group string="FAMILY STATUS">
+                                    <field name="marital" />
+                                    <field name="children" />
+                                    <separator string="EMERGENCY CONTACT"/>
+                                    <field name="emergency_contact" />
+                                    <field name="emergency_phone" />
+                                    <!-- <separator string="LEVEL"/>
+                                    <field name="certificate" />
+                                    <field name="study_school" /> -->
+                                </group>
+                                
+                                <group string="LEVEL">
+                                    <field name="certificate" />
+                                    <field name="study_school" />
+                                </group>
+                            </group>
+                        </page>
+                        <page name="job_information" string="Job information">
+                            <group  string="Job">
+                                <field name="company_id" options="{'no_create': True, 'no_open': True}"/>
+                                <field name="start_work" />
+                                <label for="time_works"/>
+                                <div class="o_row">
+                                    <field name="time_works" class="o_hr_narrow_field"/>
+                                    <span>Hour/Week</span>
+                                </div>
+                            </group>
+                        </page>
+                    </notebook>
+                </div>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="employee_view_kanban" model="ir.ui.view">
+        <field name="name">employee.view.kanban</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <kanban>
+            <field name="name"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click" style = "min-height: 100px; overflow: hidden;">
+                            <div class="row h-100">
+                                <div class="col-5 kanban_click_img_avata_cover">
+                                    <field name="image_employee" widget="image"/>
+                                </div>
+                                <div class="col-7 title_card_kanban_header ps-0">
+                                    <h4>
+                                        <field name="name"/>
+                                    </h4>
+                                    <h6>
+                                        <field name="department_id" />
+                                    </h6>
+                                    <h6>
+                                        <field name="email" />
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+    
+
+
+    <!-- actions opening views on models  -->
+    <record id="employee_action" model="ir.actions.act_window">
+        <field name="name">Employee</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+
+
+    <record id="employee_action_tree_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="employee_view_tree"/>
+        <field name="act_window_id" ref="employee_action"/>
+    </record>
+    
+    <record id="employee_action_form_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="employee_view_form"/>
+        <field name="act_window_id" ref="employee_action"/>
+    </record>
+
+
+    <record id="employee_action_kanban_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="employee_view_kanban"/>
+        <field name="act_window_id" ref="employee_action"/>
+    </record>
+
+    <menuitem id="employee_root_menu" name="Employee" sequence="10"/>
+    <menuitem id="employee_sub_menu" name="Employee_sub" parent="employee_root_menu" sequence="8"/>
+    <menuitem id="employee_child_menu" name="Employee" action="employee_action" parent="employee_sub_menu" sequence="10"/>
+    
+</odoo>
