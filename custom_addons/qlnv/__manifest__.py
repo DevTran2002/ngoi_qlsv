@@ -20,13 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
-    # 'assets':{
-    #     [
-    #     'views/department_view.xml',
-    #     'views/information_employee.xml',
-    #     ]
-    # },
+    'depends': ['base', 'web','spiffy_theme_backend'],
 
     # always loaded
     'data': [
@@ -37,9 +31,10 @@
         # 'views/employee_root_menu.xml'
     ],
     
-    
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    'assets': {
+        'web.assets_backend' [
+            'qlnv/static/src/scss/style.scss',
+        ],
+    },
 }
+

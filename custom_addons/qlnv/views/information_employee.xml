@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <tree string="">
                 <!-- <field name="employee_id" /> -->
+                <field name="id" invisible="1"/>
                 <field name="name" />
                 <field name="email" />
                 <field name="phone" />
@@ -41,16 +42,15 @@
                 <sheet>
                     <group>
                         <group style = "width: 70%">
-                            <!-- <field name="employee_id" invisible = "1"/> -->
                             <field name="name" />
                             <field name="login" />
                             <field name="phone" />
                             <field name="email" />
-                            <field name="job_id" />
+                            <field name="job" />
                             <field name="parent_id" options="{'no_create': True, 'no_open': True}"/>
                             <field name="department_id" options="{'no_create': True, 'no_open': True}" widget="one2many_list"/>
                         </group>
-                        <group class = "image_employee" style = "width: 30%; display: flex; justify-content: center;">
+                        <group class = "image_employee" style = "width: 30%; ">
                             <field name="image_employee" nolabel = "1" widget="image"  options="{'size': [300, 300]}"/>
                         </group>
                     </group>
@@ -61,13 +61,13 @@
                         <page name="private_information" string="Private information">
                             <group>
                                 <group string="PERSONAL CONTACT">
-                                    <field name="country" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="country_id" options="{'no_create': True, 'no_open': True}"/>
                                     <field name="address" />
                                     <field name="private_email" />
                                     <field name="date_of_birth" options="{'format': 'DD/MM/YYYY'}"/>
                                     <field name="gender" />
-                                    <field name="identification_id" />
-                                    <field name="passport_id" />
+                                    <field name="identification" />
+                                    <field name="passport" />
                                     <field name="place_of_birth" />
                                 </group>
                                 <group string="FAMILY STATUS">
@@ -76,9 +76,6 @@
                                     <separator string="EMERGENCY CONTACT"/>
                                     <field name="emergency_contact" />
                                     <field name="emergency_phone" />
-                                    <!-- <separator string="LEVEL"/>
-                                    <field name="certificate" />
-                                    <field name="study_school" /> -->
                                 </group>
                                 
                                 <group string="LEVEL">
@@ -174,7 +171,7 @@
     </record>
 
     <menuitem id="employee_root_menu" name="Employee" sequence="10"/>
-    <menuitem id="employee_sub_menu" name="Employee_sub" parent="employee_root_menu" sequence="8"/>
+    <menuitem id="employee_sub_menu" name="Employee" parent="employee_root_menu" sequence="8"/>
     <menuitem id="employee_child_menu" name="Employee" action="employee_action" parent="employee_sub_menu" sequence="10"/>
     
 </odoo>

@@ -1,0 +1,38 @@
+
+.image_employee > .o_wrap_field > .o_cell {
+    width: 100% !important;
+}
+
+.image_employee{
+    justify-content: end !important;
+}
+
+.title_card_kanban_header h4{ 
+    color: var(--biz-theme-primary-color);
+}
+
+.kanban_click_img_avata_cover{
+    max-height: 100px;
+    max-width: 200px;
+    margin-top: calc(var(--KanbanRecord-padding-v) * -1);
+    margin-bottom: calc(var(--KanbanRecord-padding-v) * -1);
+    margin-left: calc(var(--KanbanRecord-padding-h) * -1);
+    > div.o_field_widget {
+        width: 100%;
+        height: 100%;
+        > div{
+            width: 100%;
+            height: 100%;
+            > img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.time_work_field{
+    width: 150px
+    ;
+}

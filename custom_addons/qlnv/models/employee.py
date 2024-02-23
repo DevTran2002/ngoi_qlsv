@@ -14,10 +14,11 @@ class employee_model(models.Model):
     department_id = fields.Many2one('department', string='Department')
     date_of_birth = fields.Date(string='Date of birth')
     address = fields.Char(string='Address')
-    job_id = fields.Char(string='Job')
+    job = fields.Char(string='Job')
+    parent_id=fields.Many2one('res.users',string='Parent')
     image_employee = fields.Binary(string='Image')
-    identification_id = fields.Char(string='Number identification')
-    passport_id = fields.Char(string='Number passport')
+    identification = fields.Char(string='Number identification')
+    passport = fields.Char(string='Number passport')
     place_of_birth = fields.Char(string='Place of birth')
     marital = fields.Selection([('married','Married'),
                                 ('no_married','No married'),
@@ -31,4 +32,6 @@ class employee_model(models.Model):
     study_school = fields.Char(string='Study school')
     start_work = fields.Date(string='Start work')
     time_works = fields.Integer(string='Time work')
-    country = fields.Many2one(string='Country')
+    country_id = fields.Many2one('res.country',string='Country')
+
+    

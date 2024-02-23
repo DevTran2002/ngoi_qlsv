@@ -8,12 +8,12 @@ class department(models.Model):
     
     id = fields.Char(string= 'Id department', required=True)  
     name = fields.Char(string='Name department')
-    manager = fields.Many2one('res.users',string='Manager')
+    manager_id = fields.Many2one('res.users',string='Manager')
     number_employee = fields.Integer(string='Number employee', compute ='_compute_employees')
     employee_ids = fields.One2many('res.users','department_id', string='Employee')
     
     
-    @api.onchange('department_name')
+    @api.onchange('name')
     def _compute_employees(self): 
         for rec in self:
             if rec:

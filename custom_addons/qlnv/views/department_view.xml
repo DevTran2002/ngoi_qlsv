@@ -8,7 +8,7 @@
             <tree string="">
                 <field name="id" invisible = "1"/>
                 <field name="name" />
-                <field name="manager" />
+                <field name="manager_id" />
                 <field name="number_employee" />
             </tree>
         </field>
@@ -21,7 +21,7 @@
         <field name="arch" type="xml">
             <kanban class="o_hr_employee_kanban" sample="1">
                 <field name="name" />
-                <field name="manager" />
+                <field name="manager_id" />
                 <field name="number_employee" />
                 <templates>
                     <t t-name="kanban-box">
@@ -30,10 +30,7 @@
                             <h4 style = "color: var(--biz-theme-primary-color);">
                                 <field name="name" />
                             </h4>
-                            <!-- <field name="manager" /> -->
-                            <!-- <div class="btn btn-primary" style = "min-width: 100px; margin-top: 15px">
-                                <field name="number_employee" />
-                            </div> -->
+                            <field name="manager_id" />
                             <div class="oe_button_box mt-4" name="button_box">
                                 <button name="get_employee" type="object" class="oe_stat_button btn btn btn-primary">
                                     <field name="number_employee" string="" widget="statinfo" nolabel="1"/>
@@ -67,10 +64,10 @@
                     </button>
                 </div>
                     <group>
-                        <field name="id" invisible = "1"/>
+                        <!-- <field name="id" invisible = "1"/> -->
                         <field name="name" />
-                        <field name="manager" />
-                        <!-- <field name="number_employee" /> -->
+                        <field name="manager_id" />
+                        <field name="number_employee" />
                         <field name="employee_ids">
                             <form string="">
                                 <sheet>
@@ -81,9 +78,9 @@
                                             <field name="login" />
                                             <field name="phone" />
                                             <field name="email" />
-                                            <field name="job_id" />
+                                            <field name="job" />
                                             <field name="parent_id" options="{'no_create': True, 'no_open': True}"/>
-                                            <field name="department_id" options="{'no_create': True, 'no_open': True}" widget="one2many_list"/>
+                                            <!-- <field name="department_id" options="{'no_create': True, 'no_open': True}" widget="one2many_list"/> -->
                                         </group>
                                         <group class = "image_employee" style = "width: 30%; display: flex; justify-content: center;">
                                             <field name="image_employee" nolabel = "1" widget="image"  options="{'size': [300, 300]}"/>
@@ -96,13 +93,13 @@
                                             <page name="private_information" string="Private information">
                                                 <group>
                                                     <group string="PERSONAL CONTACT">
-                                                        <field name="country" options="{'no_create': True, 'no_open': True}"/>
+                                                        <field name="country_id" options="{'no_create': True, 'no_open': True}"/>
                                                         <field name="address" />
                                                         <field name="private_email" />
                                                         <field name="date_of_birth" options="{'format': 'DD/MM/YYYY'}"/>
                                                         <field name="gender" />
-                                                        <field name="identification_id" />
-                                                        <field name="passport_id" />
+                                                        <field name="identification" />
+                                                        <field name="passport" />
                                                         <field name="place_of_birth" />
                                                     </group>
                                                     <group string="FAMILY STATUS">
