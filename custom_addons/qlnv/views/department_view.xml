@@ -9,10 +9,9 @@
                 <field name="id" invisible = "1"/>
                 <field name="name" />
                 <field name="manager_id" />
-                <field name="number_employee" />
             </tree>
         </field>
-    </record>
+</record>
 
 
     <record id="department_view_kanban1" model="ir.ui.view">
@@ -30,8 +29,8 @@
                             <h4 style = "color: var(--biz-theme-primary-color);">
                                 <field name="name" />
                             </h4>
-                            <field name="manager_id" />
-                            <div class="oe_button_box mt-4" name="button_box">
+                            <!-- <field name="manager_id" /> -->
+                            <div class="oe_button_box mt-5" name="button_box">
                                 <button name="get_employee" type="object" class="oe_stat_button btn btn btn-primary">
                                     <field name="number_employee" string="" widget="statinfo" nolabel="1"/>
                                     <span> Employee</span>
@@ -63,11 +62,11 @@
                         <field name="number_employee" widget="statinfo"/>  
                     </button>
                 </div>
+
                     <group>
                         <!-- <field name="id" invisible = "1"/> -->
                         <field name="name" />
                         <field name="manager_id" />
-                        <field name="number_employee" />
                         <field name="employee_ids">
                             <form string="">
                                 <sheet>
@@ -80,7 +79,7 @@
                                             <field name="email" />
                                             <field name="job" />
                                             <field name="parent_id" options="{'no_create': True, 'no_open': True}"/>
-                                            <!-- <field name="department_id" options="{'no_create': True, 'no_open': True}" widget="one2many_list"/> -->
+                                            <field name="department_id" options="{'no_create': True, 'no_open': True}" widget="one2many_list"/>
                                         </group>
                                         <group class = "image_employee" style = "width: 30%; display: flex; justify-content: center;">
                                             <field name="image_employee" nolabel = "1" widget="image"  options="{'size': [300, 300]}"/>
@@ -156,8 +155,6 @@
     </record>
 
     
-    <menuitem
-        id="department_sub_menu" name="Department" sequence="10" action = "department_action"/>
-    <!-- <menuitem id="department_sub_menu" name="Department" parent="employee_root_menu" sequence="2" action = "department_action"/> -->
+    
 
 </odoo>

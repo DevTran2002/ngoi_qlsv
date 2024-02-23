@@ -20,21 +20,23 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web','spiffy_theme_backend'],
-
-    # always loaded
-    'data': [
-        # 'security/ir.model.access.csv',
-        # 'security/groups.xml',
-        'views/department_view.xml',
-        'views/information_employee.xml',
-        # 'views/employee_root_menu.xml'
-    ],
+    'depends': ['base'],
     
     'assets': {
-        'web.assets_backend' [
+        'web.assets_backend': [
+            'qlnv/static/src/scss/*.scss',
             'qlnv/static/src/scss/style.scss',
         ],
     },
+    
+    'data': [
+        'security/ir.model.access.csv',
+        # 'security/groups.xml',
+        'views/department_view.xml',
+        'views/information_employee.xml',
+        'views/employee_root_menu.xml'
+    ],
+    
+    
 }
 

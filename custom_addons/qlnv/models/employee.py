@@ -33,5 +33,30 @@ class employee_model(models.Model):
     start_work = fields.Date(string='Start work')
     time_works = fields.Integer(string='Time work')
     country_id = fields.Many2one('res.country',string='Country')
-
+    
+    number_department = fields.Integer(string='Department', compute = '_compute_department')
+    number_employee = fields.Integer(string='', compute='_compute_employee')
+    
+    
+    @api.onchange('name')
+    def _compute_department(self):
+        for rec in self:
+            if rec:
+                a = self.env['department'].search([])
+                rec.number_department = len(a)
+        
+    
+    @api.onchange('name')
+    def _compute_employee(self):
+        for rec in self:
+            if rec:
+                temp = self.search([])
+                rec.number_employee = len(temp)
+    
+    def get_department(self):
+        self.ensure_one()
+        action = self.env['ir.actions.act_window'].sudo()._for_xml_id('qlnv.department_action')
+        # action['domain'] = [('employee_ids','=',self.id)]
+        return action
+    
     

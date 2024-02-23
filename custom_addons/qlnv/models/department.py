@@ -9,7 +9,7 @@ class department(models.Model):
     id = fields.Char(string= 'Id department', required=True)  
     name = fields.Char(string='Name department')
     manager_id = fields.Many2one('res.users',string='Manager')
-    number_employee = fields.Integer(string='Number employee', compute ='_compute_employees')
+    number_employee = fields.Integer(string='Employee', compute ='_compute_employees')
     employee_ids = fields.One2many('res.users','department_id', string='Employee')
     
     
@@ -26,6 +26,8 @@ class department(models.Model):
         action = self.env['ir.actions.act_window'].sudo()._for_xml_id('qlnv.employee_action')
         action['domain'] = [('department_id','=',self.id)]
         return action
+    
+    
         # return {
         #     'type': 'ir.actions.act_window',
         #     'name': 'Employee list',

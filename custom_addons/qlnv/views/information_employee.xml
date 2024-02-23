@@ -40,6 +40,15 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
+                <div class="oe_button_box oe_highlight o_primary" name="button_box" attrs="{'invisible': [('id', '=', False)]}">
+                    <button name="get_department"
+                        type="object"
+                        class="oe_stat_button "
+                        icon="fa-solid fa-list">
+
+                        <field name="number_department" widget="statinfo"/>  
+                    </button>
+                </div>
                     <group>
                         <group style = "width: 70%">
                             <field name="name" />
@@ -170,8 +179,6 @@
         <field name="act_window_id" ref="employee_action"/>
     </record>
 
-    <menuitem id="employee_root_menu" name="Employee" sequence="10"/>
-    <menuitem id="employee_sub_menu" name="Employee" parent="employee_root_menu" sequence="8"/>
-    <menuitem id="employee_child_menu" name="Employee" action="employee_action" parent="employee_sub_menu" sequence="10"/>
+    
     
 </odoo>

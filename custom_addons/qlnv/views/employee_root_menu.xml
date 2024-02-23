@@ -1,0 +1,9 @@
+
+<odoo>
+    <data>
+        <menuitem id="employee_root_menu" name="Employee" sequence="10"/>
+            <menuitem id="employee_sub_menu" name="Employee" parent="employee_root_menu" sequence="1"/>
+                <menuitem id="employee_child_menu" name="Employee" action="qlnv.employee_action" parent="employee_sub_menu" sequence="10"/>
+            <menuitem id="department_sub_menu" name="Department" parent="employee_root_menu" sequence="2" action = "department_action"/>
+    </data>
+</odoo>
