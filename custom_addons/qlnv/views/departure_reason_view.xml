@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="departure_view_tree" model="ir.ui.view" >
+        <field name="name">Departure.view.tree</field>
+        <field name="model">departure.reason</field>
+        <field name="arch" type="xml">
+            <tree string="" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="departure_reason_action" model="ir.actions.act_window">
+        <field name="name">Departure reason</field>
+        <field name="res_model">departure.reason</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+
+</odoo>

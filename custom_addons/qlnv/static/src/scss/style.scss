@@ -36,3 +36,14 @@
     width: 150px
     ;
 }
+
+//fig width handle fields
+.o_list_number .o_handle_cell .o_field_widget .o_field_handle {
+    position: relative;
+    right: 50%;
+}
+
+////fig header notebook 
+.o_notebook .o_notebook_headers {
+    padding: 3px 0;
+}

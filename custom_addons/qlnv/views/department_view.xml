@@ -8,10 +8,12 @@
             <tree string="">
                 <field name="id" invisible = "1"/>
                 <field name="name" />
+                <field name="company_id" />
                 <field name="manager_id" />
+                <field name="number_employee" />
             </tree>
         </field>
-</record>
+    </record>
 
 
     <record id="department_view_kanban1" model="ir.ui.view">
@@ -24,13 +26,23 @@
                 <field name="number_employee" />
                 <templates>
                     <t t-name="kanban-box">
-                        <div class="oe_kanban_global_click" style = "min-height: 100px;">
+                        <div class="oe_kanban_global_click" style = "min-height: 120px;">
 
                             <h4 style = "color: var(--biz-theme-primary-color);">
                                 <field name="name" />
                             </h4>
-                            <!-- <field name="manager_id" /> -->
-                            <div class="oe_button_box mt-5" name="button_box">
+                            
+                            <t t-if="record.company_id.raw_value">
+                                <small style = "display: flex; align-items: center;" >
+                                    <i class="fa fa-building-o" role="img" aria-label="Company" title="Company"/>
+                                    <div class="ms-1">
+                                        <field name="company_id" options="{'no_create': True, 'no_open': True}"/>
+                                    </div>
+                                </small>
+                            </t>
+                            
+
+                            <div class="oe_button_box" name="button_box" style = "position: absolute; top: 66px;">
                                 <button name="get_employee" type="object" class="oe_stat_button btn btn btn-primary">
                                     <field name="number_employee" string="" widget="statinfo" nolabel="1"/>
                                     <span> Employee</span>
@@ -66,6 +78,7 @@
                     <group>
                         <!-- <field name="id" invisible = "1"/> -->
                         <field name="name" />
+                        <field name="company_id" />
                         <field name="manager_id" />
                         <field name="employee_ids">
                             <form string="">
@@ -153,8 +166,5 @@
         <field name="view_id" ref="department_view_kanban1"/>
         <field name="act_window_id" ref="department_action"/>
     </record>
-
-    
-    
 
 </odoo>

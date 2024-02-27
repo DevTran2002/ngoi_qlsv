@@ -25,11 +25,19 @@
         <field name="arch" type="xml">
             <search string="">
                 <!-- <field name="employee_id" /> -->
-                <field name="date_of_birth" options="{'format': 'DD/MM/YYYY'}"/>
-                <field name="gender" />
+                <field name="name" />
+                <field name="email" />
                 <field name="phone" />
-                <field name="address" />
-                <field name="image_employee"/>
+                <field name="login" />
+                <field name="department_id" />
+                <field name="parent_id"/>
+                <field name="gender" />
+
+                <searchpanel expand="0">
+                        <field name="company_id" icon="fa-building" enable_counters="1"/>
+                        <field name="department_id" icon="fa-users" enable_counters="1"/>
+                    
+                </searchpanel>
             </search>
         </field>
     </record>

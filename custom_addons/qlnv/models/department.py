@@ -11,7 +11,7 @@ class department(models.Model):
     manager_id = fields.Many2one('res.users',string='Manager')
     number_employee = fields.Integer(string='Employee', compute ='_compute_employees')
     employee_ids = fields.One2many('res.users','department_id', string='Employee')
-    
+    company_id = fields.Many2one('res.company', string='Company')
     
     @api.onchange('name')
     def _compute_employees(self): 

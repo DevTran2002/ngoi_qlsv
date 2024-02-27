@@ -31,10 +31,13 @@
     
     'data': [
         'security/ir.model.access.csv',
-        # 'security/groups.xml',
+        'security/groups.xml',
         'views/department_view.xml',
         'views/information_employee.xml',
-        'views/employee_root_menu.xml'
+        'views/employee_root_menu.xml',
+        'views/departure_reason_view.xml',
+        'views/job_position_view.xml',
+        'views/contract_type_view.xml',
     ],
     
     
