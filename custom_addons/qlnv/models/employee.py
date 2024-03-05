@@ -36,7 +36,13 @@ class employee_model(models.Model):
     
     number_department = fields.Integer(string='Department', compute = '_compute_department')
     number_employee = fields.Integer(string='', compute='_compute_employee')
+    contract_type_id = fields.Many2one('contract.type', string='Contract type')
     
+
+    def action_employee(self):
+        action = self.env['ir.actions.act_window'].sudo()._for_xml_id('qlnv.employee_action')
+        # action['domain'] = [('employee_ids','=',self.id)]
+        return action
     
     @api.onchange('name')
     def _compute_department(self):

@@ -30,6 +30,7 @@
     },
     
     'data': [
+        'demo/demo.xml',
         'security/ir.model.access.csv',
         'security/groups.xml',
         'views/department_view.xml',
@@ -38,8 +39,11 @@
         'views/departure_reason_view.xml',
         'views/job_position_view.xml',
         'views/contract_type_view.xml',
+        'views/medal_view.xml',
     ],
     
+    
+    'application': True,
     
 }
 

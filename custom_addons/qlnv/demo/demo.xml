@@ -1,30 +1,30 @@
-<odoo>
-    <data>
-<!--
-          <record id="object0" model="qlnv.qlnv">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
+<?xml version="1.0" encoding="utf-8"?>
 
-          <record id="object1" model="qlnv.qlnv">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
+<odoo noupdate="1">
+    <record id="demo_data_departure_reason_1" model="departure.reason">
+        <field name="name">Đã từ chức</field>
+    </record>
+    <record id="demo_data_departure_reason_2" model="departure.reason">
+        <field name="name">Đã thôi việc</field>
+    </record>
+    <record id="demo_data_departure_reason_3" model="departure.reason">
+        <field name="name">Về hưu</field>
+    </record>
 
-          <record id="object2" model="qlnv.qlnv">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
+    <!-- demo contract type -->
+    <record id="demo_data_contract_type_1" model="contract.type">
+        <field name="name">Thực tập</field>
+    </record>
+    <record id="demo_data_contract_type_2" model="contract.type">
+        <field name="name">Thời vụ</field>
+    </record>
+    <record id="demo_data_contract_type_3" model="contract.type">
+        <field name="name">Thử việc</field>
+    </record>
+    <record id="demo_data_contract_type_4" model="contract.type">
+        <field name="name">Chính thức</field>
+    </record>
 
-          <record id="object3" model="qlnv.qlnv">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
 
-          <record id="object4" model="qlnv.qlnv">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
-    </data>
+
 </odoo>

@@ -79,7 +79,7 @@
                         <!-- <field name="id" invisible = "1"/> -->
                         <field name="name" />
                         <field name="company_id" />
-                        <field name="manager_id" />
+                        <field name="manager_id" options="{'no_create': True, 'no_open': True}"/>
                         <field name="employee_ids">
                             <form string="">
                                 <sheet>
@@ -153,7 +153,25 @@
         </field>
     </record>
 
-
+    <!-- <record id="act_membership_my_prefs" model="ir.actions.server">
+            <field name="name">My Preferences</field>
+            <field name="model_id" ref="qlnv.model_department"/>
+            <field name="binding_model_id" ref="qlnv.model_department"/>
+            <field name="state">code</field>
+            <field name="code">
+                action = {
+                    'type': 'ir.actions.act_window',
+                    'name': 'My Preferences',
+                    'view_mode': 'form',
+                    'view_type': 'form',
+                    'view_id': 'ref="department_view_form"',
+                    'res_model': 'department',
+                    'nodestroy': 'true',
+                    'res_id': uid,
+                    'views': [(False, 'form')],
+                }
+            </field>
+    </record>   -->
 
     <record id="department_action" model="ir.actions.act_window">
         <field name="name">Department</field>

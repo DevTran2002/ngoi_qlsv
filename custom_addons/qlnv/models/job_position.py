@@ -15,4 +15,7 @@ class job_position(models.Model):
     def _compute_no_of_employee(self):
         for rec in self:
             if rec:
-                a = self.env['department'].search([('department_id','=',rec.id)])
+                a = self.env['job.position'].search([('id','=',rec.id)]).department_id.number_employee
+                rec.no_of_employee = a
+                
+                

@@ -5,11 +5,12 @@
         <field name="name">job.position.view.tree</field>
         <field name="model">job.position</field>
         <field name="arch" type="xml">
-            <tree string="">
+            <tree string="job" sample="1">
                 <field name="sequence" widget="handle"/>
                 <field name="name" />
                 <field name="department_id" />
                 <field name="no_of_recruitment" />
+                <field name="no_of_employee"/>
             </tree>
         </field>
     </record>
@@ -40,6 +41,7 @@
                                 </page>
                                 <page string="Recruitment">
                                     <field name="job_summary" widget="html" options="{'collaborative': true}"/>
+                                    <field name="no_of_employee" readonly = "1"/>
                                 </page>
                             </notebook>
                         </div>

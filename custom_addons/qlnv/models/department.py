@@ -23,7 +23,7 @@ class department(models.Model):
     
     def get_employee(self):
         self.ensure_one()
-        action = self.env['ir.actions.act_window'].sudo()._for_xml_id('qlnv.employee_action')
+        action = self.env['ir.actions.act_window'].sudo()._for_xml_id('qlnv.employee_action1')
         action['domain'] = [('department_id','=',self.id)]
         return action
     

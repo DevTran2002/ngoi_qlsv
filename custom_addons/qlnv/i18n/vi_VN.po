@@ -1,0 +1,565 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* qlnv
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-05 02:08+0000\n"
+"PO-Revision-Date: 2024-03-05 02:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_kanban1
+msgid "<i class=\"fa fa-building-o\" role=\"img\" aria-label=\"Company\" title=\"Company\"/>"
+msgstr ""
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_kanban1
+msgid "<span> Employee</span>"
+msgstr "Nhân viên"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.employee_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.view_res_users_form_inherited
+msgid "<span>Hour/Week</span>"
+msgstr "Giờ"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__address
+msgid "Address"
+msgstr "Địa chỉ"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.medal_view_form
+msgid "Badge Description"
+msgstr "Mô tả huy hiệu"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__certificate
+msgid "Certificate"
+msgstr "Giấy chứng nhận"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__children
+msgid "Children"
+msgstr "Trẻ em"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_department__company_id
+#: model:ir.model.fields,field_description:qlnv.field_work_location__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: qlnv
+#: model:ir.ui.menu,name:qlnv.configuration_menu
+msgid "Configuration"
+msgstr "Cấu hình"
+
+#. module: qlnv
+#: model:ir.actions.act_window,name:qlnv.contract_type_action
+#: model:ir.model.fields,field_description:qlnv.field_job_position__contract_type_id
+#: model:ir.model.fields,field_description:qlnv.field_res_users__contract_type_id
+#: model:ir.ui.menu,name:qlnv.contract_type_menu
+msgid "Contract type"
+msgstr "Loại hợp đồng"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__country_id
+msgid "Country"
+msgstr "Quốc gia"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type__create_uid
+#: model:ir.model.fields,field_description:qlnv.field_department__create_uid
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason__create_uid
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__create_uid
+#: model:ir.model.fields,field_description:qlnv.field_job_position__create_uid
+#: model:ir.model.fields,field_description:qlnv.field_work_location__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type__create_date
+#: model:ir.model.fields,field_description:qlnv.field_department__create_date
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason__create_date
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__create_date
+#: model:ir.model.fields,field_description:qlnv.field_job_position__create_date
+#: model:ir.model.fields,field_description:qlnv.field_work_location__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.ui.menu,name:qlnv.candidates_menu
+msgid "Các ứng viên"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__game_badge__rule_auth__users
+msgid "Danh sách người được chọn"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__date_of_birth
+msgid "Date of birth"
+msgstr "Ngày sinh"
+
+#. module: qlnv
+#: model:ir.actions.act_window,name:qlnv.department_action
+#: model:ir.model.fields,field_description:qlnv.field_job_position__department_id
+#: model:ir.model.fields,field_description:qlnv.field_res_users__department_id
+#: model:ir.model.fields,field_description:qlnv.field_res_users__number_department
+#: model:ir.ui.menu,name:qlnv.department_sub_menu
+msgid "Department"
+msgstr "Phòng ban"
+
+#. module: qlnv
+#: model:ir.actions.act_window,name:qlnv.departure_reason_action
+msgid "Departure reason"
+msgstr "Lý do nghỉ việc"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__description
+#: model:ir.model.fields,field_description:qlnv.field_job_position__job_summary
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type__display_name
+#: model:ir.model.fields,field_description:qlnv.field_department__display_name
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason__display_name
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__display_name
+#: model:ir.model.fields,field_description:qlnv.field_job_position__display_name
+#: model:ir.model.fields,field_description:qlnv.field_work_location__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__res_users__marital__divorce
+msgid "Divorce"
+msgstr "Ly hôn"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.employee_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.view_res_users_form_inherited
+msgid "EMERGENCY CONTACT"
+msgstr "LIÊN LẠC KHẨN CẤP"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__emergency_contact
+msgid "Emergency contact"
+msgstr "Tên Người liên lạc khẩn cấp"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__emergency_phone
+msgid "Emergency phone"
+msgstr "Điện thoại khẩn cấp"
+
+#. module: qlnv
+#: model:ir.actions.act_window,name:qlnv.employee_action
+#: model:ir.actions.act_window,name:qlnv.employee_action1
+#: model:ir.model.fields,field_description:qlnv.field_department__employee_ids
+#: model:ir.model.fields,field_description:qlnv.field_department__number_employee
+#: model:ir.ui.menu,name:qlnv.config_employee_sub_menu
+#: model:ir.ui.menu,name:qlnv.employee_child_menu
+#: model:ir.ui.menu,name:qlnv.employee_root_menu
+#: model:ir.ui.menu,name:qlnv.employee_sub_menu
+msgid "Employee"
+msgstr "Nhân viên"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.employee_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.view_res_users_form_inherited
+msgid "FAMILY STATUS"
+msgstr "Tình trạng hôn nhân"
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__res_users__gender__female
+msgid "Female"
+msgstr "Nữ"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__gender
+msgid "Gender"
+msgstr "Giới tính"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.medal_view_form
+msgid "Granting"
+msgstr ""
+
+#. module: qlnv
+#: model:res.groups,name:qlnv.group_recruitment_all_view
+msgid "Group recruitment all view "
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__rule_auth_badge_id
+msgid "Huy hiệu yêu cầu"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type__id
+#: model:ir.model.fields,field_description:qlnv.field_department__id
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason__id
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__id
+#: model:ir.model.fields,field_description:qlnv.field_job_position__id
+#: model:ir.model.fields,field_description:qlnv.field_work_location__id
+msgid "ID"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__image
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__image_1920
+#: model:ir.model.fields,field_description:qlnv.field_res_users__image_employee
+msgid "Image"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__image_1024
+msgid "Image 1024"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__image_128
+msgid "Image 128"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__image_256
+msgid "Image 256"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__image_512
+msgid "Image 512"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.ui.menu,name:qlnv.inf_sub_menu
+msgid "Information"
+msgstr "Thông tin"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__job
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.employee_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.view_res_users_form_inherited
+msgid "Job"
+msgstr "Công việc"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.employee_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.view_res_users_form_inherited
+msgid "Job information"
+msgstr "Thông tin công việc"
+
+#. module: qlnv
+#: model:ir.actions.act_window,name:qlnv.job_position_action
+#: model:ir.ui.menu,name:qlnv.job_position_menu
+msgid "Job position"
+msgstr "Vị trí công việc"
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__game_badge__rule_auth__nobody
+msgid "Không có ai"
+msgstr ""
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.employee_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.view_res_users_form_inherited
+msgid "LEVEL"
+msgstr "Trình độ"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type____last_update
+#: model:ir.model.fields,field_description:qlnv.field_department____last_update
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason____last_update
+#: model:ir.model.fields,field_description:qlnv.field_game_badge____last_update
+#: model:ir.model.fields,field_description:qlnv.field_job_position____last_update
+#: model:ir.model.fields,field_description:qlnv.field_work_location____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type__write_uid
+#: model:ir.model.fields,field_description:qlnv.field_department__write_uid
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason__write_uid
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__write_uid
+#: model:ir.model.fields,field_description:qlnv.field_job_position__write_uid
+#: model:ir.model.fields,field_description:qlnv.field_work_location__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type__write_date
+#: model:ir.model.fields,field_description:qlnv.field_department__write_date
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason__write_date
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__write_date
+#: model:ir.model.fields,field_description:qlnv.field_job_position__write_date
+#: model:ir.model.fields,field_description:qlnv.field_work_location__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__res_users__gender__male
+msgid "Male"
+msgstr "Nam"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_department__manager_id
+msgid "Manager"
+msgstr "Người quản lý"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__marital
+msgid "Marital"
+msgstr "Hôn nhân"
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__res_users__marital__married
+msgid "Married"
+msgstr "Đã cưới"
+
+#. module: qlnv
+#: model:ir.actions.act_window,name:qlnv.medal_action
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__name
+#: model:ir.ui.menu,name:qlnv.config_medal_menu
+msgid "Medal"
+msgstr "Huy hiệu"
+
+#. module: qlnv
+#: model:ir.actions.server,name:qlnv.act_membership_my_prefs
+msgid "My information"
+msgstr "Thông tin của tôi"
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__game_badge__rule_auth__everyone
+msgid "Mọi người"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_department__name
+msgid "Name department"
+msgstr "Tên phòng ban"
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__game_badge__rule_auth__having
+msgid "Người có một số huy hiệu"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__rule_auth_user_ids
+msgid "Người dùng được ủy quyền"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__res_users__marital__no_married
+msgid "No married"
+msgstr "Chưa kết hôn"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_job_position__no_of_employee
+msgid "No of employee"
+msgstr "Không có nhân viên"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__number_employee
+msgid "Number Employee"
+msgstr "Số nhân viên"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__identification
+msgid "Number identification"
+msgstr "Số CCCD"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__passport
+msgid "Number passport"
+msgstr "Số hộ chiếu"
+
+#. module: qlnv
+#: model:ir.model.fields.selection,name:qlnv.selection__res_users__gender__other
+#: model:ir.model.fields.selection,name:qlnv.selection__res_users__marital__other
+msgid "Other"
+msgstr "Khác"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.employee_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.view_res_users_form_inherited
+msgid "PERSONAL CONTACT"
+msgstr "LIÊN HỆ CÁ NHÂN"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__parent_id
+msgid "Parent"
+msgstr "Người quản lý"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__place_of_birth
+msgid "Place of birth"
+msgstr "Địa chỉ nơi sinh"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_job_position__name
+msgid "Position"
+msgstr "Vị trí"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__private_email
+msgid "Private email"
+msgstr "Email cá nhân"
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.department_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.employee_view_form
+#: model_terms:ir.ui.view,arch_db:qlnv.view_res_users_form_inherited
+msgid "Private information"
+msgstr "Thông tin cá nhân"
+
+#. module: qlnv
+#: model:ir.ui.menu,name:qlnv.reason_for_quit_menu
+msgid "Reason for quit"
+msgstr "Lý do nghỉ việc"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason__name
+msgid "Reasons"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.ui.menu,name:qlnv.config_recruitment_sub_menu
+#: model_terms:ir.ui.view,arch_db:qlnv.job_position_view_form
+msgid "Recruitment"
+msgstr "Tuyển dụng"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__rule_auth
+msgid "Rule Auth"
+msgstr ""
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.medal_view_form
+msgid ""
+"Security rules to define who is allowed to manually grant badges. Not "
+"enforced for administrator."
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__start_work
+msgid "Start work"
+msgstr "Ngày bắt đầu làm việc"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__study_school
+msgid "Study school"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__rule_max_number
+msgid "Số lượng giới hạn"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_game_badge__rule_max
+msgid "Số lượng giới hạn mỗi tháng"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_job_position__no_of_recruitment
+msgid "Target"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_res_users__time_works
+msgid "Time work"
+msgstr "Thời gian làm"
+
+#. module: qlnv
+#: model:ir.ui.menu,name:qlnv.recruitment_root_menu
+msgid "Tuyển dụng"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model,name:qlnv.model_res_users
+msgid "User"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_work_location__address_id
+msgid "Work address"
+msgstr "Địa chỉ nơi làm"
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_work_location__name
+msgid "Work location"
+msgstr "Vị trí làm việc"
+
+#. module: qlnv
+#: model:ir.model,name:qlnv.model_contract_type
+msgid "contract.type"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model,name:qlnv.model_department
+msgid "department"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model,name:qlnv.model_departure_reason
+msgid "departure.reason"
+msgstr ""
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.medal_view_form
+msgid "e.g. Problem Solver"
+msgstr ""
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.job_position_view_form
+msgid "e.g. Sales Manager"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model,name:qlnv.model_game_badge
+msgid "game.badge"
+msgstr ""
+
+#. module: qlnv
+#: model_terms:ir.ui.view,arch_db:qlnv.job_position_view_tree
+msgid "job"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model,name:qlnv.model_job_position
+msgid "job.position"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model.fields,field_description:qlnv.field_contract_type__sequence
+#: model:ir.model.fields,field_description:qlnv.field_departure_reason__sequence
+#: model:ir.model.fields,field_description:qlnv.field_job_position__sequence
+msgid "sequence"
+msgstr ""
+
+#. module: qlnv
+#: model:ir.model,name:qlnv.model_work_location
+msgid "work.location"
+msgstr ""
