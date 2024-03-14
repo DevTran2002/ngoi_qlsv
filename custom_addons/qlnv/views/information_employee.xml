@@ -236,7 +236,7 @@
     </record>
 
 
-    // act curent record
+    <!-- // act curent record -->
     <record id="act_membership_my_prefs" model="ir.actions.server">
             <field name="name">My information</field>
             <field name="model_id" ref="qlnv.model_res_users"/>
@@ -296,6 +296,26 @@
         <field name="act_window_id" ref="employee_action"/>
     </record>
 
-    
+
+<!--  action view, kanban user  -->
+    <record id="employee_user_action" model="ir.actions.act_window">
+        <field name="name">Employee</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree,kanban</field>
+    </record>
+
+    <record id="employee_action_user_tree_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="employee_view_tree"/>
+        <field name="act_window_id" ref="employee_user_action"/>
+    </record>
+
+    <record id="employee_action_user_kanban_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="employee_view_kanban"/>
+        <field name="act_window_id" ref="employee_user_action"/>
+    </record>
     
 </odoo>

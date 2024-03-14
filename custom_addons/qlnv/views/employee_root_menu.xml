@@ -3,27 +3,29 @@
     <data>
         <menuitem id="employee_root_menu" name="Employee" sequence="10"/>
             <menuitem id="inf_sub_menu" name="Information" parent="employee_root_menu" sequence="1" action = "act_membership_my_prefs"/>
-            <menuitem id="employee_sub_menu" name="Employee" parent="employee_root_menu" sequence="2"/>
-                <menuitem id="employee_child_menu" name="Employee" action="qlnv.employee_action" parent="employee_sub_menu" sequence="10"/>
-            <menuitem id="department_sub_menu" name="Department" parent="employee_root_menu" sequence="3" action = "department_action"/>
-
-
+            <menuitem id="employee_child_menu_user" name="Employee" action="qlnv.employee_user_action" parent="employee_root_menu" sequence="2" groups = "base.group_user"/>
+            <menuitem id="department_sub_menu_user" name="Department" parent="employee_root_menu" sequence="3" action = "department_user_action" groups = "base.group_user"/>
 
             <!-- config menu -->
-            <menuitem id="configuration_menu" name="Configuration" parent="employee_root_menu" sequence="10"/>
+            <menuitem id="configuration_menu" name="Configuration" parent="employee_root_menu" sequence="10" groups = "group_employee_configuration"/>
                 <!-- employee menu chill     -->
                 <menuitem id="config_employee_sub_menu" name="Employee" parent="configuration_menu" sequence="10"/>
+                    <menuitem id="employee_child_menu_admin" name="Employee" action="qlnv.employee_action" parent="config_employee_sub_menu" sequence="1" groups = "group_employee_configuration"/>
+                    <menuitem id="department_sub_menu" name="Department" parent="config_employee_sub_menu" sequence="2" action = "department_action" groups = "group_employee_configuration"/>
+                    <menuitem id="reason_for_quit_menu" name="Departure reason" parent="config_employee_sub_menu" sequence="3" action="qlnv.departure_reason_action"/>
                     <menuitem id="config_medal_menu" name="Medal" parent="config_employee_sub_menu" sequence="10" action='qlnv.medal_action'/>
-                    <menuitem id="reason_for_quit_menu" name="Departure reason" parent="config_employee_sub_menu" sequence="10" action="qlnv.departure_reason_action"/>
+
                 <!-- Recruitment menu     -->
-                <menuitem id="config_recruitment_sub_menu" name="Recruitment" parent="configuration_menu" sequence="10"/>
+                <!-- <menuitem id="config_recruitment_sub_menu" name="Recruitment" parent="configuration_menu" sequence="10"/>
                     <menuitem id="job_position_menu" name="Job position" parent="config_recruitment_sub_menu" sequence="10" action="qlnv.job_position_action"/>
-                    <menuitem id="contract_type_menu" name="Contract type" parent="config_recruitment_sub_menu" sequence="10" action = "qlnv.contract_type_action"/>
-        
-        <menuitem id="recruitment_root_menu" name="Tuyển dụng" sequence="10"/>
-            <menuitem id="candidates_menu" name="Các ứng viên" parent="recruitment_root_menu" sequence="10"/>
-                <menuitem id="candidates_menu" name="Các ứng viên" parent="recruitment_root_menu" sequence="10"/>
-                
+                    <menuitem id="contract_type_menu" name="Contract type" parent="config_recruitment_sub_menu" sequence="10" action = "qlnv.contract_type_action"/> -->
+        <!-- recruitment menu -->
+        <menuitem id="recruitment_root_menu" name="Recruitment" sequence="10"/>
+            <menuitem id="job_position_menu" name="Job position" parent="recruitment_root_menu" sequence="10" action="qlnv.job_position_action"/>
+
+            <!-- configuration recruiment -->
+            <menuitem id="configuration_recruiment_menu" name="Configuration" parent="recruitment_root_menu" sequence="10"/>
+                <menuitem id="contract_type_menu" name="Contract type" parent="configuration_recruiment_menu" sequence="10" action = "qlnv.contract_type_action"/>
         
     </data>
 </odoo>

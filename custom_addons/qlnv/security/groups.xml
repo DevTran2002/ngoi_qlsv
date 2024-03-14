@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="0">
-        <record id="group_recruitment_all_view" model="res.groups">
-            <field name="name">Group recruitment all view </field>
+        <record id="group_user_all_view" model="res.groups">
+            <field name="name">Group user all view </field>
             <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>           
         </record>
 
+        <record id="group_employee_configuration" model="res.groups">
+            <field name="name">Group configuration employee </field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>           
+        </record>
 
     </data>
 </odoo>

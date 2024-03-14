@@ -1,8 +1,15 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
+
+access_employee_user,access.employee,model_res_users,base.group_user,1,0,0,0
+access_employee_admin,access.employee,model_res_users,group_employee_configuration,1,1,1,1
+access_employee_admin,access.employee,model_res_users,group_user_all_view,1,1,1,1
+access_department_user,access.department.user,model_department,base.group_user,1,0,0,0
 access_department_admin,access.department,model_department,base.group_system,1,1,1,1
 
 access_departure_admin,access.departure,model_departure_reason,base.group_system,1,1,1,1
 access_job_position_admin,access.job.position,model_job_position,base.group_system,1,1,1,1
 access_contract_type_admin,access.contract.type,model_contract_type,base.group_system,1,1,1,1
 access_game_badge_admin,access.game.badge,model_game_badge,base.group_system,1,1,1,1
+
+
