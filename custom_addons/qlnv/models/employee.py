@@ -16,7 +16,7 @@ class employee_model(models.Model):
     date_of_birth = fields.Date(string='Date of birth')
     address = fields.Char(string='Address')
     job = fields.Char(string='Job')
-    # job_position_id = fields.Many2one('job.position', string='Job position')
+    job_position_id = fields.Many2one('job.position', string='Job position')
     parent_id=fields.Many2one('res.users',string='Parent')
     image_employee = fields.Binary(string='Image')
     identification = fields.Char(string='Number identification')

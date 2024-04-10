@@ -10,10 +10,10 @@ class job_position(models.Model):
     no_of_recruitment = fields.Integer(string='Target',default = '1')
     job_summary = fields.Html(string='Description')
     no_of_employee = fields.Integer(string='No of employee', compute = '_compute_no_of_employee')
-    # company_id = fields.Many2one('res.company', string='Company')
-    # user_id = fields.Many2one('res.users', string='Employer')
+    company_id = fields.Many2one('res.company', string='Company')
+    user_id = fields.Many2one('res.users', string='Employer')
     
-    # interviewer_ids = fields.One2many('res.user','job_position_id', string='Interviewer')
+    interviewer_ids = fields.One2many('res.users','job_position_id', string='Interviewer')
     
     def _compute_no_of_employee(self):
         for rec in self:

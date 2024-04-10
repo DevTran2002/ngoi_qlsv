@@ -36,8 +36,7 @@
                                         </group>
                                         <group>
                                             <field name="no_of_recruitment" />
-                                            <!-- <field name="interviewer_ids" widget ="many2many_tag"/> -->
-
+                                            <field name="interviewer_ids" widget ="many2many_tags"/>
                                         </group>
                                     </group>
                                 </page>
@@ -61,7 +60,28 @@
             <kanban>
                 <templates>
                     <t t-name="kanban-box">
-                        
+                        <div class="oe_kanban_global_click" style = "min-height: 120px;">
+
+                            <h4 style = "color: var(--biz-theme-primary-color);">
+                                <field name="name" />
+                            </h4>
+                            
+                            <!-- <t t-if="record.company_id.raw_value">
+                                <small style = "display: flex; align-items: center;" >
+                                    <i class="fa fa-building-o" role="img" aria-label="Company" title="Company"/>
+                                    <div class="ms-1">
+                                        <field name="company_id" options="{'no_create': True, 'no_open': True}"/>
+                                    </div>
+                                </small>
+                            </t> -->
+                            
+
+                            <div class="oe_button_box btn btn-primary" name="button_box" style = "position: absolute; top: 66px;">
+                                    <field name="no_of_recruitment" string="" widget="statinfo" nolabel="1"/>
+                                    <span> Number recruitment</span>
+                            </div>
+
+                        </div>
                     </t>
                 </templates>
             </kanban>
@@ -72,8 +92,9 @@
     <record id="job_position_action" model="ir.actions.act_window">
         <field name="name">Job position</field>
         <field name="res_model">job.position</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
+    
 
 </odoo>
