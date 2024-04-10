@@ -1,6 +1,7 @@
-from odoo import fields, api, models
-
-
+from odoo import models, fields, api, _, _lt
+import re
+from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError
 
 class employee_model(models.Model):
     _inherit = "res.users"
@@ -15,6 +16,7 @@ class employee_model(models.Model):
     date_of_birth = fields.Date(string='Date of birth')
     address = fields.Char(string='Address')
     job = fields.Char(string='Job')
+    # job_position_id = fields.Many2one('job.position', string='Job position')
     parent_id=fields.Many2one('res.users',string='Parent')
     image_employee = fields.Binary(string='Image')
     identification = fields.Char(string='Number identification')
@@ -58,11 +60,28 @@ class employee_model(models.Model):
             if rec:
                 temp = self.search([])
                 rec.number_employee = len(temp)
+                
+                
+    @api.onchange('email')
+    def validate_mail(self):
+        if self.email:
+            match = re.match('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$', self.email)
+            if match == None:
+                raise UserError(_('Please Enter Correct Email'))
+    
+    @api.onchange('phone')
+    def validate_phone(self):
+        if self.phone:
+            match = re.match('^(\+84|84|0)+([0-9]{9})$', self.phone)
+            if not match:
+                raise ValidationError(_('Invalid Phone. Please re-enter.'))
     
     def get_department(self):
         self.ensure_one()
         action = self.env['ir.actions.act_window'].sudo()._for_xml_id('qlnv.department_action')
         # action['domain'] = [('employee_ids','=',self.id)]
         return action
+    
+    
     
     
