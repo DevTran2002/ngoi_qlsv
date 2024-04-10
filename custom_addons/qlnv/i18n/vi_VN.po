@@ -330,7 +330,7 @@ msgstr "Hôn nhân"
 #. module: qlnv
 #: model:ir.model.fields.selection,name:qlnv.selection__res_users__marital__married
 msgid "Married"
-msgstr "Đã kết hôn"
+msgstr "Đã cưới"
 
 #. module: qlnv
 #: model:ir.actions.act_window,name:qlnv.medal_action
