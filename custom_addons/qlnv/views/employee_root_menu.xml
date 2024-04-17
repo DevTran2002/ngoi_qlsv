@@ -20,9 +20,9 @@
                     <menuitem id="job_position_menu" name="Job position" parent="config_recruitment_sub_menu" sequence="10" action="job_position_action"/>
                     <menuitem id="contract_type_menu" name="Contract type" parent="config_recruitment_sub_menu" sequence="10" action = "contract_type_action"/>
         
-        <!-- <menuitem id="recruitment_root_menu" name="Tuyển dụng" sequence="10"/>
+        <menuitem id="recruitment_root_menu" name="Tuyển dụng" sequence="10"/>
             <menuitem id="candidates_menu" name="Các ứng viên" parent="recruitment_root_menu" sequence="10"/>
-                <menuitem id="candidates_menu" name="Các ứng viên" parent="recruitment_root_menu" sequence="10"/> -->
+                <menuitem id="candidates_menu" name="Các ứng viên" parent="recruitment_root_menu" sequence="10"/>
                 
         
     </data>
