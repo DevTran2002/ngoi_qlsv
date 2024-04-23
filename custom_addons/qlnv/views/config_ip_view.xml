@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="timekeeping_view_tree" model="ir.ui.view">
+        <field name="name">timekeeping.view.tree</field>
+        <field name="model">timekeeping</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name" />
+                <field name="department_id" />
+                <field name="config_ip" />
+                <field name="is_active" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="timekeeping_view_form" model="ir.ui.view">
+        <field name="name">timekeeping.view.form</field>
+        <field name="model">timekeeping</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="department_id" options="{'no_create': True, 'no_open': True}"/>
+
+                        <label for = 'config_ip' string = 'Config ip'/>
+                        <div class="o_cell o_wrap_input flex-grow-1 flex-sm-grow-0 text-break d-flex o_field_custom g-2" style="width: 100%;">
+                            <field name="config_ip" />
+                            <button name = 'get_ip' string = 'Get ip' type = 'object' 
+                            class = "btn oe_stat_button btn-primary ms-5 get_ip_btn" />
+                        </div>
+
+                        <field name="is_active" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="timekeeping_action" model="ir.actions.act_window">
+        <field name="name">Config ip</field>
+        <field name="res_model">timekeeping</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <menuitem id="config_ip" name="Config ip" action = "timekeeping_action" sequence="10"/>
+
+</odoo>

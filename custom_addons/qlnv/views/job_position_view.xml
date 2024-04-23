@@ -21,31 +21,30 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
-                        <div class="oe_button_box" name="button_box"/>
-                        <div class="oe_title">
-                            <label for="name"/>
-                            <h1><field name="name" placeholder="e.g. Sales Manager"/></h1>
-                        </div>
-                        <div class="mt-5">
-                            <notebook>
-                                <page string="Recruitment">
+                    <div class="oe_button_box" name="button_box"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="e.g. Sales Manager"/></h1>
+                    </div>
+                    <div class="mt-5">
+                        <notebook>
+                            <page string="Recruitment">
+                                <group>
                                     <group>
-                                        <group>
-                                            <field name="department_id" options="{'no_create': True, 'no_open': True}"/>
-                                            <field name="contract_type_id" options="{'no_create': True, 'no_open': True}"/>
-                                        </group>
-                                        <group>
-                                            <field name="no_of_recruitment" />
-                                            <field name="interviewer_ids" widget ="many2many_tags"/>
-                                        </group>
+                                        <field name="department_id" options="{'no_create': True, 'no_open': True}"/>
+                                        <field name="contract_type_id" options="{'no_create': True, 'no_open': True}"/>
                                     </group>
-                                </page>
-                                <page string="Recruitment">
-                                    <field name="job_summary" widget="html" options="{'collaborative': true}"/>
-                                    <field name="no_of_employee" readonly = "1"/>
-                                </page>
-                            </notebook>
-                        </div>
+                                    <group>
+                                        <field name="no_of_recruitment" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Recruitment">
+                                <field name="job_summary" widget="html" options="{'collaborative': true}"/>
+                                <field name="no_of_employee" readonly = "1"/>
+                            </page>
+                        </notebook>
+                    </div>
                 </sheet>
             </form>
         </field>

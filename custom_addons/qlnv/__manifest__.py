@@ -40,6 +40,8 @@
         'views/job_position_view.xml',
         'views/contract_type_view.xml',
         'views/medal_view.xml',
+        'views/config_ip_view.xml',
+        'views/cv.face_recognition_view.xml',
     ],
     
     

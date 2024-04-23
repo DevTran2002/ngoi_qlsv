@@ -80,6 +80,7 @@
                         <field name="name" />
                         <field name="company_id" />
                         <field name="manager_id" options="{'no_create': True, 'no_open': True}"/>
+                        <field name="ip_config_id" options="{'no_create': True, 'no_open': True}"/>
                         <field name="employee_ids">
                             <form string="">
                                 <sheet>

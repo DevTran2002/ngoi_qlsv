@@ -23,7 +23,8 @@
         <menuitem id="recruitment_root_menu" name="Tuyển dụng" sequence="10"/>
             <menuitem id="candidates_menu" name="Các ứng viên" parent="recruitment_root_menu" sequence="10"/>
                 <menuitem id="candidates_menu" name="Các ứng viên" parent="recruitment_root_menu" sequence="10"/>
-                
+
+        <!-- <menuitem id="config_ip" name="Config ip" action = "qlnv.timekeeping_action" sequence="10"/>         -->
         
     </data>
 </odoo>
