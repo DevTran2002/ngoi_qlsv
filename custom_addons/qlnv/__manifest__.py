@@ -22,10 +22,16 @@
     # any module necessary for this one to work correctly
     'depends': ['base'],
     
+    'external_dependencies': {
+        'python': ['cv2', 'face_recognition', 'cmake', 'dlib', 'PIL',
+                'numpy'],
+    },
+    
     'assets': {
         'web.assets_backend': [
             'qlnv/static/src/scss/*.scss',
             'qlnv/static/src/scss/style.scss',
+            'qlnv/static/src/js/*',
         ],
     },
     
@@ -41,7 +47,7 @@
         'views/contract_type_view.xml',
         'views/medal_view.xml',
         'views/config_ip_view.xml',
-        'views/cv.face_recognition_view.xml',
+        'views/face_recognition_view.xml',
     ],
     
     

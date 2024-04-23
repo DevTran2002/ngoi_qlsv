@@ -9,4 +9,4 @@ from . import job_position
 from . import medal
 from . import medal
 from . import timekeeping
-from . import face_recognition
+from . import hr_face_recognition

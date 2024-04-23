@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="face_recognition_view_form" model="ir.ui.view">
+        <field name="name">face_recognition.view.form</field>
+        <field name="model">hr.face.recognition</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                    <field name="name" />
+                    <button name = 'get_login' string = 'Get login' type = 'object' 
+                        class = "btn oe_stat_button btn-primary ms-5 get_ip_btn" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="face_recognition_action" model="ir.actions.act_window">
+        <field name="name">Action Name</field>
+        <field name="res_model">hr.face.recognition</field>
+        <field name="view_mode">form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="face_recognition_action_form_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="face_recognition_view_form"/>
+        <field name="act_window_id" ref="face_recognition_action"/>
+    </record>
+
+    <menuitem id="face_recognition_menu" name="Face recognition" sequence="10" action = "face_recognition_action"/>
+
+</odoo>

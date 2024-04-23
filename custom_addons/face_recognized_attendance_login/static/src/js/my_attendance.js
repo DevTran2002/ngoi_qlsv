@@ -12,15 +12,15 @@ var login = 0
 // Login made possible, if and only if the captured image and face of the
 // employee matched
 MyAttendances.include({
-     update_attendance: async function () {
-       await rpc.query({
+    update_attendance: async function () {
+        await rpc.query({
         model:'hr.employee',
         method:'get_login_screen'
     }).then(function (data) {
         login = data
-   });
-   if (login==1){
-          var self = this;
+    });
+    if (login==1){
+        var self = this;
         this._rpc({
                 model: 'hr.employee',
                 method: 'attendance_manual',

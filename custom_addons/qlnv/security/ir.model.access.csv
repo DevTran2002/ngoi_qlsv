@@ -8,3 +8,5 @@ access_contract_type_admin,access.contract.type,model_contract_type,base.group_s
 access_game_badge_admin,access.game.badge,model_game_badge,base.group_system,1,1,1,1
 
 access_timekeeping,access.time.keeping,model_timekeeping,base.group_system,1,1,1,1
+
+access_hr_face_recognition,access.hr.face_recognition,model_hr_face_recognition,base.group_system,1,1,1,1
