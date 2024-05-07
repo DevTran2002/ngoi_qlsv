@@ -6,18 +6,23 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
+                    <header>
+                        <div class="oe_button_box oe_highlight o_primary" name="button_box" attrs="{'invisible': [('id', '=', False)]}">
+                            <button name = 'get_login' string = 'Get login' type = 'object' class = "btn oe_stat_button btn-primary ms-5" />
+                        </div>
+                    </header>
                     <group>
-                    <field name="name" />
-                    <button name = 'get_login' string = 'Get login' type = 'object' 
-                        class = "btn oe_stat_button btn-primary ms-5 get_ip_btn" />
+                        <button name = 'get_login' string = 'Get login' type = 'object' class = "btn oe_stat_button btn-primary ms-5" />
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
+    
+
     <record id="face_recognition_action" model="ir.actions.act_window">
-        <field name="name">Action Name</field>
+        <field name="name">Face recognition</field>
         <field name="res_model">hr.face.recognition</field>
         <field name="view_mode">form</field>
         <field name="domain">[]</field>
@@ -29,6 +34,7 @@
         <field name="view_id" ref="face_recognition_view_form"/>
         <field name="act_window_id" ref="face_recognition_action"/>
     </record>
+    
 
     <menuitem id="face_recognition_menu" name="Face recognition" sequence="10" action = "face_recognition_action"/>
 

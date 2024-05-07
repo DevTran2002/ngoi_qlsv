@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+    <record id="my_client_action" model="ir.actions.client">
+        <field name="name">Some Name</field>
+        <field name="tag">my-custom-action</field>
+        <field name="target">main</field>
+
+    </record>
+
+    <menuitem id="attendances_menu" name="Check In / Check Out"  sequence="10" action="my_client_action"/>
+
+    </data>
+</odoo>

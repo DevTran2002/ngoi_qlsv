@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="abc" name="abc" inherit_id="web.layout">
+        <xpath expr="//head" position="inside">
+            <h1>hello</h1>
+
+        </xpath>
+    </template>
+</odoo>

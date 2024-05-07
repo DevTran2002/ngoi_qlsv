@@ -10,3 +10,4 @@ from . import medal
 from . import medal
 from . import timekeeping
 from . import hr_face_recognition
+from . import attendances

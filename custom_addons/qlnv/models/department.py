@@ -12,7 +12,7 @@ class department(models.Model):
     company_id = fields.Many2one('res.company', string='Company')
     
     # ip_config = fields.Char(string= 'IP config', compute = '_get_ip_config', default = '')
-    ip_config_id = fields.Many2one('timekeeping', string= 'IP config', required=True)
+    ip_config_id = fields.Many2one('timekeeping', string= 'IP config')
     
     @api.onchange('name')
     def _compute_employees(self): 

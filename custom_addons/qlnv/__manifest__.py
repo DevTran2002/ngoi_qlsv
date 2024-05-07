@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail','web','spiffy_theme_backend'],
     
     'external_dependencies': {
         'python': ['cv2', 'face_recognition', 'cmake', 'dlib', 'PIL',
@@ -31,7 +31,9 @@
         'web.assets_backend': [
             'qlnv/static/src/scss/*.scss',
             'qlnv/static/src/scss/style.scss',
-            'qlnv/static/src/js/*',
+            # 'qlnv/static/src/xml/a.xml',
+            'qlnv/static/src/test/**/*',
+            # 'qlnv/static/src/js/attendances_login.js',
         ],
     },
     
@@ -48,6 +50,10 @@
         'views/medal_view.xml',
         'views/config_ip_view.xml',
         'views/face_recognition_view.xml',
+        'views/attendances_view.xml',
+        'views/attendances_login_view.xml',       
+        # 'views/web_attendance_login_template.xml',       
+        
     ],
     
     
