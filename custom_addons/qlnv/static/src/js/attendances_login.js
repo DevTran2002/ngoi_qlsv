@@ -9,6 +9,6 @@ odoo.define('qlnv.attendances_login', function (require) {
         contentTemplate : 'abcde'
     });
 
-    core.action_registry.add('my-custom-action', ClientAction);
+    core.action_registry.add('attendances-login-action', ClientAction);
     return ClientAction;
 });

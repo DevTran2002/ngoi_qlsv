@@ -2,6 +2,7 @@ from odoo import models, fields, api, _, _lt
 import re
 from odoo.exceptions import ValidationError
 from odoo.exceptions import UserError
+from odoo.http import request
 
 class employee_model(models.Model):
     _inherit = "res.users"
@@ -39,7 +40,12 @@ class employee_model(models.Model):
     number_employee = fields.Integer(string='', compute='_compute_employee')
     contract_type_id = fields.Many2one('contract.type', string='Contract type')
     
-
+    @api.onchange('name')
+    def check_duplicate_name(self):
+        rec = request.env['res.users'].sudo().search([('name','=ilike',self.name)])
+        if rec:
+            raise ValidationError(_('Users already exists, please re-enter.'))
+        
     def action_employee(self):
         action = self.env['ir.actions.act_window'].sudo()._for_xml_id('qlnv.employee_action')
         # action['domain'] = [('employee_ids','=',self.id)]
@@ -81,6 +87,17 @@ class employee_model(models.Model):
         # action['domain'] = [('employee_ids','=',self.id)]
         return action
     
+    @api.model
+    def get_model_data(self):
+            records = self.env['res.users'].search([])
+            data_users = []
+            for rec in records:
+                if rec.id == self.env.uid:
+                    data_users.append({
+                        'id': rec.id,
+                        'name': rec.name,
+                        'image': rec.image_employee,
+                    })
+            return data_users
     
-    
-    
+        

@@ -16,7 +16,7 @@ class recognitionFace(models.Model):
     
     attendances_id = fields.Many2one('attendances',string='')
                 
-    # @api.model
+    @api.model
     def get_login(self):
         try:
             employee_pic = self.env['res.users'].search([('id', '=', self.env.user.id)]).image_employee

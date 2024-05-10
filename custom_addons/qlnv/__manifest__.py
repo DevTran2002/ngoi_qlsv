@@ -32,7 +32,7 @@
             'qlnv/static/src/scss/*.scss',
             'qlnv/static/src/scss/style.scss',
             # 'qlnv/static/src/xml/a.xml',
-            'qlnv/static/src/test/**/*',
+            'qlnv/static/src/attendances/**/*',
             # 'qlnv/static/src/js/attendances_login.js',
         ],
     },

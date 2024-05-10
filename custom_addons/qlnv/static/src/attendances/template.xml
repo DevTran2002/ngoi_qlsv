@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="attendances_login_template">
+        <div class="o_content_login_attendances w-100 h-100 d-flex justify-content-center align-items-center">
+            <div class="block_attendances ">
+
+            </div>
+        </div>
+    </t>
+
+
+    <t t-name="userAttendances">
+        <div class="avatar_image">
+            <t t-set="userId" t-value="widget[0].id"/>
+            <img class="img rounded-circle mb-n5" t-attf-src="/web/image?model=res.users&amp;field=avatar_128&amp;id=#{userId}" t-att-title="userName" height="80" t-att-alt="userName"/>
+        </div>
+        <div class="name_account w-100 d-flex justify-content-center align-items-center flex-column mt-4">
+            <h2>
+                <t t-esc="widget[0].name"/>
+            </h2>
+            <h2>
+                <t t-esc="uid"/>
+            </h2>
+            <h3>Want to check out?</h3>
+        </div>
+        <div class="time_out w-100 d-flex justify-content-center align-items-center mt-4">
+            <!-- <h4>Time works: </h4>
+                    <h4> 00:00</h4> -->
+        </div>
+        <div class="button_login w-100 d-flex justify-content-center align-items-center mt-4">
+            <button type="button" t-attf-class="attendance_sign_in_out btn btn-light">
+                <i class="fa fa-sign-out" aria-hidden="true"></i>Login
+            </button>
+        </div>
+    </t>
+
+</templates>
+
+
