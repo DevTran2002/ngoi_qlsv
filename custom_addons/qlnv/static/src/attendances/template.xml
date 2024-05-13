@@ -21,7 +21,12 @@
             <h2>
                 <t t-esc="uid"/>
             </h2>
-            <h3>Want to check out?</h3>
+            <t t-if="widget[0].state">
+                <h3>Want to check out?</h3>
+            </t>
+            <t t-else="widget[0].state">
+                <h3>Want to check in?</h3>
+            </t>
         </div>
         <div class="time_out w-100 d-flex justify-content-center align-items-center mt-4">
             <!-- <h4>Time works: </h4>

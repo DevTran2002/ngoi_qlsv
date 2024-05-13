@@ -40,6 +40,9 @@ class employee_model(models.Model):
     number_employee = fields.Integer(string='', compute='_compute_employee')
     contract_type_id = fields.Many2one('contract.type', string='Contract type')
     
+    attendances_status = fields.Boolean(string='Status', default = False)
+    
+    
     @api.onchange('name')
     def check_duplicate_name(self):
         rec = request.env['res.users'].sudo().search([('name','=ilike',self.name)])
@@ -96,7 +99,7 @@ class employee_model(models.Model):
                     data_users.append({
                         'id': rec.id,
                         'name': rec.name,
-                        'image': rec.image_employee,
+                        'state': rec.attendances_status,
                     })
             return data_users
     

@@ -49,9 +49,9 @@
         'views/contract_type_view.xml',
         'views/medal_view.xml',
         'views/config_ip_view.xml',
-        'views/face_recognition_view.xml',
         'views/attendances_view.xml',
         'views/attendances_login_view.xml',       
+        # 'views/abc.xml',       
         # 'views/web_attendance_login_template.xml',       
         
     ],

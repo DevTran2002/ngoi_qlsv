@@ -10,10 +10,10 @@ class attendances(models.Model):
     _description= ''
 
     def _default_employee(self):
-        a = self.env['res.users'].search([('id','=',self.env.user.id)]).name
-        return a
-    
-    employee_id = fields.Many2one('res.users', string='Employee', default=_default_employee , required=True, ondelete='cascade', index=True)
+        res = self.env['res.users'].search([('id','=',self.env.user.id)])
+        return res
+
+    employee_id = fields.Many2one('res.users', string="Employee", default=_default_employee, required=True, ondelete='cascade', index=True)
     check_in = fields.Datetime(string= 'Check in', default=fields.Datetime.now, required=True)
     check_out = fields.Datetime(string= 'Check out')
     worked_hours = fields.Float(string='Worked hours', compute = '_worked_hours',store=True)
@@ -34,6 +34,13 @@ class attendances(models.Model):
                     'check_out': format_datetime(self.env, rec.check_out, dt_format=False),
                 }))
         return result
+    
+    # def set_time_works(self):
+    #     state = self.env['res.users'].search([('id', '=', self.env.user.id)]).attendances_status
+        
+    #     if state == True:
+    #         name_get(self)
+    
     
     
     @api.depends('check_out')

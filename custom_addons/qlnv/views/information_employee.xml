@@ -236,7 +236,7 @@
     </record>
 
 
-    // act curent record
+    <!-- act curent record -->
     <record id="act_membership_my_prefs" model="ir.actions.server">
             <field name="name">My information</field>
             <field name="model_id" ref="qlnv.model_res_users"/>

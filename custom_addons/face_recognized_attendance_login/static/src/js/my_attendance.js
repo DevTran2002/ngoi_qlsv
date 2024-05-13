@@ -33,10 +33,10 @@ MyAttendances.include({
                     self.do_warn(result.warning);
                 }
             });
-   }
-   else{
+    }
+    else{
         window.alert("Failed to recognize the face. Please try again....")
-   }
-     }
+    }
+    }
 });
 });

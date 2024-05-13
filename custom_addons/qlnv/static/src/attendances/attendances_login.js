@@ -7,7 +7,7 @@ odoo.define('qlnv.attendances_login', function (require) {
     const session = require('web.session');
     var web_client = require('web.web_client');
     var QWeb = core.qweb;
-
+    var login = 0;
     const { useState} = owl;
 
     var ClientAction = AbstractAction.extend({
@@ -32,6 +32,7 @@ odoo.define('qlnv.attendances_login', function (require) {
             })
             .then(function (res) {
                 debugger
+                console.log(res)
                 self.res = res
             });
 
@@ -39,29 +40,43 @@ odoo.define('qlnv.attendances_login', function (require) {
         },
 
         render_attendances_user:function(){
-            debugger
             var self = this
-            console.log(this.res)
             self.$('.block_attendances').append(QWeb.render('userAttendances', { widget: this.res }));
 
         },
 
-        update_attendance:function(){
+        update_attendance:async function(){
             console.log('check button')
             var self = this;
-            this._rpc({
+            await this._rpc({
                 model: 'hr.face.recognition',
                 method: 'get_login',
                 args: [],
             }).then(function (result) {
-                console.log(result.params);
-                var res = result.params
-                self.displayNotification({  title: res.title, type: res.type , message: res.message,sticky : res.sticky });
+                debugger
+                login = result
+                console.log(login)
             });
-        },
-
-        
-
+            if (login==1){
+                var self = this;
+                // this._rpc({
+                //         model: 'hr.employee',
+                //         method: 'attendance_manual',
+                //         args: [[self.employee.id], 'hr_attendance.hr_attendance_action_my_attendances'],
+                //     })
+                //     .then(function(result) {
+                //         if (result.action) {
+                //             self.do_action(result.action);
+                //         } else if (result.warning) {
+                //             self.do_warn(result.warning);
+                //         }
+                //     });
+                self.displayNotification({  title: 'Success', type: 'success' , message: "Login success",sticky : false});
+            }
+            else{
+                self.displayNotification({  title: 'False', type: 'warning' , message: "Login false",sticky : false});
+            }
+        }
     });
 
     core.action_registry.add('attendances-login-action', ClientAction);

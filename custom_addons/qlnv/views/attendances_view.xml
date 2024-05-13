@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
     <record id="attendances_view_tree" model="ir.ui.view">
         <field name="name">attendances.view.tree</field>
         <field name="model">attendances</field>
         <field name="arch" type="xml">
             <tree string="" editable="bottom" sample="1">
-                <field name="employee_id" />
+                <field name="employee_id" options="{'no_create': True, 'no_open': True}"/>
                 <field name="check_in" />
                 <field name="check_out" />
                 <field name="worked_hours" widget = 'float_time'/>
@@ -15,10 +14,9 @@
     </record>
 
     <record id="attendances_action" model="ir.actions.act_window">
-        <field name="name">Face recognition</field>
+        <field name="name">Attendances</field>
         <field name="res_model">attendances</field>
         <field name="view_mode">tree</field>
-        <field name="domain">[]</field>
     </record>
 
     <record id="attendances_action_tree_view" model="ir.actions.act_window.view">
@@ -28,13 +26,7 @@
         <field name="act_window_id" ref="attendances_action"/>
     </record>
 
-    <!-- <record id="attendances_action_form_view" model="ir.actions.act_window.view">
-        <field eval="1" name="sequence"/>
-        <field name="view_mode">form</field>
-        <field name="view_id" ref="face_recognition_view_form"/>
-        <field name="act_window_id" ref="face_recognition_action"/>
-    </record> -->
+    <menuitem id="attendances_root_menu" name="Attendances" sequence="10"/>
+        <menuitem id="attendances_menu" name="Attendances" sequence="10" parent ="attendances_root_menu" action = "attendances_action"/>
     
-    <menuitem id="attendances_menu" name="Attendances" sequence="10" action = "attendances_action"/>
-
 </odoo>

@@ -2,14 +2,13 @@
 <odoo>
     <data>
 
-    <record id="my_client_action" model="ir.actions.client">
+    <record id="attendances_login_action" model="ir.actions.client">
         <field name="name">Attendances login</field>
         <field name="tag">attendances-login-action</field>
         <field name="target">main</field>
-
     </record>
 
-    <menuitem id="attendances_menu" name="Check In / Check Out"  sequence="10" action="my_client_action"/>
+    <menuitem id="attendances_login_menu" name="Check In / Check Out" parent = 'qlnv.attendances_root_menu'  sequence="10" action="attendances_login_action"/>
 
     </data>
 </odoo>
