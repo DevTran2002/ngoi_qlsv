@@ -40,8 +40,8 @@ class employee_model(models.Model):
     number_employee = fields.Integer(string='', compute='_compute_employee')
     contract_type_id = fields.Many2one('contract.type', string='Contract type')
     
-    attendances_status = fields.Boolean(string='Status', default = False)
-    
+    attendances_ids = fields.One2many('attendances','employee_id',string='Attendances')
+    attendances_number_id = fields.Many2one('attendances',string='Attendances')
     
     @api.onchange('name')
     def check_duplicate_name(self):
@@ -93,14 +93,66 @@ class employee_model(models.Model):
     @api.model
     def get_model_data(self):
             records = self.env['res.users'].search([])
+            status = 'check_in'
             data_users = []
+            check_date = fields.Datetime.now().date().strftime('%Y-%m-%d')
+            attendances = self.env['attendances'].search([('employee_id','=',self.env.uid)])
+
+            if attendances:
+                for rec in attendances:
+                    if rec.create_date.date().strftime('%Y-%m-%d') == check_date:
+                        status = rec.status
+                        
             for rec in records:
                 if rec.id == self.env.uid:
                     data_users.append({
                         'id': rec.id,
                         'name': rec.name,
-                        'state': rec.attendances_status,
+                        'status': status,
+                        'image': rec.image_employee,
                     })
             return data_users
-    
         
+    @api.model
+    def create_attendances(self):
+        check_date = fields.Datetime.now().date().strftime('%Y-%m-%d')
+        attendances = self.env['attendances'].search([('employee_id','=',self.env.uid)])
+        
+        if attendances:
+            for rec in attendances:
+                if rec.create_date.date().strftime('%Y-%m-%d') == check_date:
+                    rec.write({'check_out':fields.Datetime.now(), 'status':'check_out'})
+                else:
+                    val = {
+                    'employee_id':self.env.uid,
+                    'check_in': fields.Datetime.now(),
+                    'status':'check_in'
+                    }
+                    self.env['attendances'].create(val)
+        else:
+            val = {
+                    'employee_id':self.env.uid,
+                    'check_in': fields.Datetime.now(),
+                    'status':'check_in'
+            }
+            self.env['attendances'].create(val)
+        
+        
+        
+        # if attendances:
+        #     for rec in attendances:
+        #         rec.write({'check_out':fields.Datetime.now(), 'status':'check_out'})
+        # else:
+        #     for rec in attendances:
+        #         if rec.attendances.check_in.date().strftime('%Y-%m-%d') == check_date:
+        #             raise ValidationError(_('You have already checked in!'))
+        #     else:
+        #         val = {
+        #             'employee_id':self.env.uid,
+        #             'check_in': fields.Datetime.now(),
+        #             'status':'check_in'
+        #         }
+        #         self.env['attendances'].create(val)
+
+            
+        return attendances  

@@ -33,8 +33,14 @@
             'qlnv/static/src/scss/style.scss',
             # 'qlnv/static/src/xml/a.xml',
             'qlnv/static/src/attendances/**/*',
+            'qlnv/static/src/chart_render/*.js',
+            'qlnv/static/src/chart_render/*.xml',
             # 'qlnv/static/src/js/attendances_login.js',
         ],
+        'web.assets_qweb': [ 
+            'qlnv/static/src/xml/abc.xml',
+            'qlnv/static/src/chart_render/*.xml',
+        ], 
     },
     
     'data': [
@@ -51,8 +57,7 @@
         'views/config_ip_view.xml',
         'views/attendances_view.xml',
         'views/attendances_login_view.xml',       
-        # 'views/abc.xml',       
-        # 'views/web_attendance_login_template.xml',       
+        'views/chart_render_view.xml',       
         
     ],
     

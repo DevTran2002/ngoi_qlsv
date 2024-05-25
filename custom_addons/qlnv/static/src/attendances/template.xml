@@ -2,42 +2,90 @@
 <templates xml:space="preserve">
     <t t-name="attendances_login_template">
         <div class="o_content_login_attendances w-100 h-100 d-flex justify-content-center align-items-center">
-            <div class="block_attendances ">
+            <div class="block_attendances "></div>
+        </div>
+    </t>
 
+    <t t-name = "attendances_render">
+        <div class="o_user_render_attendances w-100 ">
+            <t t-set="userId" t-value="widget[0].id"/>
+            <div class="avatar_image">
+                <img class="img rounded-circle mb-n5" t-attf-src="/web/image?model=res.users&amp;field=avatar_128&amp;id=#{userId}" t-att-title="userName" height="80" t-att-alt="userName"/>
             </div>
+            <div class="name_account w-100 d-flex justify-content-center align-items-center flex-column mt-4">
+                <h2>
+                    <t t-esc="widget[0].name"/>
+                </h2>
+                <h2>
+                    <t t-esc="uid"/>
+                </h2>
+            </div>
+        </div>
+
+        
+
+        <div class="button_attendances w-100 d-flex justify-content-center align-items-center mt-4">
+            <t t-set="state" t-value="widget[0].status"/>
+            <t t-if="status == check_in">
+                <button type="button" class="attendance_sign_in_out btn btn-warning">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out
+                </button>
+            </t>
+            <t t-else="">
+                <button type="button" class="attendance_sign_in_out btn btn-light">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>Sign In
+                </button>
+            </t>
         </div>
     </t>
 
 
-    <t t-name="userAttendances">
+
+    <!-- <t t-set="state" t-value="widget[0].state"/>
+                    <t t-set="userId" t-value="widget[0].id"/>
+                    <div class="data_user">
+                        <div class="avatar_image">
+                            <img class="img rounded-circle mb-n5" t-attf-src="/web/image?model=res.users&amp;field=avatar_128&amp;id=#{userId}" t-att-title="userName" height="80" t-att-alt="userName"/>
+                        </div>
+                        <div class="name_account w-100 d-flex justify-content-center align-items-center flex-column mt-4">
+                            <t t-set = "state" t-value = "widget[0].state"/>
+                            <h2>
+                                <t t-esc="widget[0].name"/>
+                            </h2>
+                            <h2>
+                                <t t-esc="uid"/>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class = "button_attendances w-100 d-flex justify-content-center align-items-center mt-4">
+                        <t t-if="state">
+                            <button type="button" class="attendance_sign_in_out btn btn-warning">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out
+                            </button>
+                        </t>
+                        <t t-else="">
+                            <button type="button" class="attendance_sign_in_out btn btn-light">
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>Sign In
+                            </button>
+                        </t> -->
+
+    <!-- btn-{{ widget[0].state ? 'warning' : 'light' }} -->
+
+    <!-- <t t-name = "dataUser">
         <div class="avatar_image">
             <t t-set="userId" t-value="widget[0].id"/>
             <img class="img rounded-circle mb-n5" t-attf-src="/web/image?model=res.users&amp;field=avatar_128&amp;id=#{userId}" t-att-title="userName" height="80" t-att-alt="userName"/>
         </div>
         <div class="name_account w-100 d-flex justify-content-center align-items-center flex-column mt-4">
+            <t t-set = "state" t-value = "widget[0].state"/>
             <h2>
                 <t t-esc="widget[0].name"/>
             </h2>
             <h2>
                 <t t-esc="uid"/>
             </h2>
-            <t t-if="widget[0].state">
-                <h3>Want to check out?</h3>
-            </t>
-            <t t-else="widget[0].state">
-                <h3>Want to check in?</h3>
-            </t>
         </div>
-        <div class="time_out w-100 d-flex justify-content-center align-items-center mt-4">
-            <!-- <h4>Time works: </h4>
-                    <h4> 00:00</h4> -->
-        </div>
-        <div class="button_login w-100 d-flex justify-content-center align-items-center mt-4">
-            <button type="button" t-attf-class="attendance_sign_in_out btn btn-light">
-                <i class="fa fa-sign-out" aria-hidden="true"></i>Login
-            </button>
-        </div>
-    </t>
+    </t> -->
 
 </templates>
 

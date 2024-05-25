@@ -1,5 +1,5 @@
 from odoo import fields, api, models
-from odoo.exceptions import AccessError
+from odoo.exceptions import AccessError, ValidationError
 from odoo import models, fields, api, exceptions, _
 from odoo.tools import format_datetime
 from odoo.osv.expression import AND, OR
@@ -14,6 +14,10 @@ class attendances(models.Model):
         return res
 
     employee_id = fields.Many2one('res.users', string="Employee", default=_default_employee, required=True, ondelete='cascade', index=True)
+    status = fields.Selection([
+        ('check_in', 'Check In'),
+        ('check_out', 'Check Out'),
+    ], string='Status', required=True, default='check_in')
     check_in = fields.Datetime(string= 'Check in', default=fields.Datetime.now, required=True)
     check_out = fields.Datetime(string= 'Check out')
     worked_hours = fields.Float(string='Worked hours', compute = '_worked_hours',store=True)
@@ -34,13 +38,19 @@ class attendances(models.Model):
                     'check_out': format_datetime(self.env, rec.check_out, dt_format=False),
                 }))
         return result
-    
-    # def set_time_works(self):
-    #     state = self.env['res.users'].search([('id', '=', self.env.user.id)]).attendances_status
+
+    @api.model
+    def create(self,vals):
+        datetime = fields.Datetime.now().strftime('%Y-%m-%d')
+        # a = self.env['attendances'].search([('check_in','=',vals['check_in'])])
+        temp = self.env['attendances'].search([('employee_id','=',vals['employee_id'])])
+        for rec in temp:
+            if rec.check_in.date().strftime('%Y-%m-%d') == datetime:
+                raise ValidationError(_('You have already checked in!'))
         
-    #     if state == True:
-    #         name_get(self)
-    
+        result = super(attendances, self).create(vals)
+        return result
+        
     
     
     @api.depends('check_out')

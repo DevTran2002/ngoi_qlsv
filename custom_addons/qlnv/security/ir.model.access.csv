@@ -11,3 +11,14 @@ access_timekeeping,access.time.keeping,model_timekeeping,base.group_system,1,1,1
 
 access_hr_face_recognition,access.hr.face_recognition,model_hr_face_recognition,base.group_system,1,1,1,1
 access_attendances,access.attendances,model_attendances,base.group_system,1,1,1,1
+
+
+access_res_users,access.res.users,model_res_users,base.group_user,1,1,1,1
+access_department_admin,access.department,model_department,base.group_user,1,1,1,1
+access_departure_admin,access.departure,model_departure_reason,base.group_user,1,1,1,1
+access_job_position_admin,access.job.position,model_job_position,base.group_user,1,1,1,1
+access_contract_type_admin,access.contract.type,model_contract_type,base.group_user,1,1,1,1
+access_game_badge_admin,access.game.badge,model_game_badge,base.group_user,1,1,1,1
+access_timekeeping,access.time.keeping,model_timekeeping,base.group_user,1,1,1,1
+access_hr_face_recognition,access.hr.face_recognition,model_hr_face_recognition,base.group_user,1,1,1,1
+access_attendances,access.attendances,model_attendances,base.group_user,1,1,1,1
