@@ -26,16 +26,23 @@
 
         <div class="button_attendances w-100 d-flex justify-content-center align-items-center mt-4">
             <t t-set="state" t-value="widget[0].status"/>
+            <t t-esc="state"/>
+            <button type="button" t-attf-class=" attendance_sign_in_out btn btn-warning btn-{{ state = 'check_in' ? 'light' : 'warning' }}">
+                <i t-attf-class="fa fa-sign-{{ state = 'check_in' ? 'in' : 'out' }}" aria-hidden="true"></i>
+                <t t-if="state = 'check_in'">
+                    Sign In
+                </t>
+                <t t-else="">
+                    Sign Out
+                </t>
+            </button>
             <t t-if="status == check_in">
-                <button type="button" class="attendance_sign_in_out btn btn-warning">
-                    <i class="fa fa-sign-out" aria-hidden="true"></i>Sign Out
-                </button>
             </t>
-            <t t-else="">
+            <!-- <t t-if="status == 'check_in'">
                 <button type="button" class="attendance_sign_in_out btn btn-light">
                     <i class="fa fa-sign-in" aria-hidden="true"></i>Sign In
                 </button>
-            </t>
+            </t> -->
         </div>
     </t>
 

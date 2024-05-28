@@ -57,10 +57,3 @@ requirements.txt
 setup.cfg
 setup.py
 setup/
-custom_addons/spiffy_theme_backend
-CONTRIBUTING.md
-COPYRIGHT
-LICENSE
-MANIFEST.in
-README.md
-SECURITY.md

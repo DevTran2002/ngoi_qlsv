@@ -92,67 +92,40 @@ class employee_model(models.Model):
     
     @api.model
     def get_model_data(self):
-            records = self.env['res.users'].search([])
+            records = self.env['res.users'].search([('id','=',self.env.uid)])
             status = 'check_in'
             data_users = []
             check_date = fields.Datetime.now().date().strftime('%Y-%m-%d')
-            attendances = self.env['attendances'].search([('employee_id','=',self.env.uid)])
+            attendances = self.env['attendances'].search([('employee_id','=',self.env.uid),('create_date','>=',check_date)])
 
             if attendances:
                 for rec in attendances:
-                    if rec.create_date.date().strftime('%Y-%m-%d') == check_date:
-                        status = rec.status
+                    status = rec.status
                         
             for rec in records:
-                if rec.id == self.env.uid:
-                    data_users.append({
-                        'id': rec.id,
-                        'name': rec.name,
-                        'status': status,
-                        'image': rec.image_employee,
-                    })
+                data_users.append({
+                    'id': rec.id,
+                    'name': rec.name,
+                    'status': status,
+                    'image': rec.image_employee,
+                })
             return data_users
         
     @api.model
     def create_attendances(self):
         check_date = fields.Datetime.now().date().strftime('%Y-%m-%d')
-        attendances = self.env['attendances'].search([('employee_id','=',self.env.uid)])
+        attendances = self.env['attendances'].search([('employee_id','=',self.env.uid),('create_date','>=',check_date)])
         
         if attendances:
             for rec in attendances:
-                if rec.create_date.date().strftime('%Y-%m-%d') == check_date:
-                    rec.write({'check_out':fields.Datetime.now(), 'status':'check_out'})
-                else:
-                    val = {
-                    'employee_id':self.env.uid,
-                    'check_in': fields.Datetime.now(),
-                    'status':'check_in'
-                    }
-                    self.env['attendances'].create(val)
+                    rec.write({'check_out':fields.Datetime.now()})
+                    return rec
         else:
             val = {
                     'employee_id':self.env.uid,
                     'check_in': fields.Datetime.now(),
-                    'status':'check_in'
+                    'status':'check_out'
             }
             self.env['attendances'].create(val)
-        
-        
-        
-        # if attendances:
-        #     for rec in attendances:
-        #         rec.write({'check_out':fields.Datetime.now(), 'status':'check_out'})
-        # else:
-        #     for rec in attendances:
-        #         if rec.attendances.check_in.date().strftime('%Y-%m-%d') == check_date:
-        #             raise ValidationError(_('You have already checked in!'))
-        #     else:
-        #         val = {
-        #             'employee_id':self.env.uid,
-        #             'check_in': fields.Datetime.now(),
-        #             'status':'check_in'
-        #         }
-        #         self.env['attendances'].create(val)
-
             
         return attendances  

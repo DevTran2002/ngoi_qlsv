@@ -1,0 +1,11 @@
+<templates>
+    <t t-name="FavoriteMenu" t-inherit="web.FavoriteMenu" t-inherit-mode="extension" owl="1">
+        <xpath expr="//Dropdown" position="replace">
+            <Dropdown class="'o_favorite_menu btn-group'" togglerClass="'btn btn-light'">
+                <t t-set-slot="toggler">
+                </t>
+            </Dropdown>
+        </xpath>
+    </t>
+</templates>
+                              
